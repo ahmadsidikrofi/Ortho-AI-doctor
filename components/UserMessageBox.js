@@ -56,7 +56,7 @@ const UserMessageBox = ({ setEditContent, input, handleInputChange, handleSubmit
                     }}
                 >
                 </textarea>
-                <Button onClick={handleSubmit} variant="outline" size="icon" className="absolute right-3 bottom-4 rounded-[10px] dark:bg-white bg-black dark:hover:bg-gray-200 hover:bg-gray-700 p-4">
+                <Button onClick={handleSubmit} variant="outline" size="icon" disabled={isLoading}  className="absolute right-3 bottom-4 rounded-[10px] dark:bg-white bg-black dark:hover:bg-gray-200 hover:bg-gray-700 p-4">
                     {isLoading ? (
                         <Loader2 className="animate-spin text-white dark:text-black" />
                     ) : (

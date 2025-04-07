@@ -30,14 +30,14 @@ export default function Chat() {
   
     try {
       setMessages((prevMessages) => [...prevMessages, userMessage, typingPlaceholder])
-      const response = await fetch(`https://orthoai.maorthonet.com/ask`, {
+      const response = await fetch(`http://192.168.1.3:8000/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: input }),
       })
   
       const data = await response.json()
-      const aiResponse = { id: Date.now() + 1, role: "assistant", content: data.response.content }
+      const aiResponse = { id: Date.now() + 1, role: "assistant", content: data.answer }
       setTimeout(() => {
         // setMessages((prevMessages) => [...prevMessages, aiResponse])
         setMessages((prevMessages) =>
