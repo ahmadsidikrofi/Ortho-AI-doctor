@@ -30,7 +30,7 @@ export default function Chat() {
   
     try {
       setMessages((prevMessages) => [...prevMessages, userMessage, typingPlaceholder])
-      const response = await fetch(`http://192.168.1.3:8000/ask`, {
+      const response = await fetch(`https://orthoai.maorthonet.com/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: input }),
